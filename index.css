@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body { @apply bg-white font-sans text-slate-700 antialiased; }
+  h1, h2, h3, h4 { @apply font-display text-navy-900; }
+  :focus-visible { @apply outline-2 outline-offset-2 outline-ocean-500; }
+}
+@layer components {
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-lg px-5 py-2.5 text-sm font-semibold transition disabled:cursor-not-allowed disabled:opacity-60; }
+  .btn-primary { @apply btn bg-ocean-600 text-white hover:bg-ocean-700; }
+  .btn-dark { @apply btn bg-navy-900 text-white hover:bg-navy-800; }
+  .btn-outline { @apply btn border border-slate-300 bg-white text-navy-900 hover:border-ocean-500 hover:text-ocean-700; }
+  .btn-sm { @apply px-3 py-1.5 text-xs; }
+  .input { @apply w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-800 placeholder:text-slate-400 focus:border-ocean-500 focus:outline-none focus:ring-2 focus:ring-ocean-200 disabled:bg-slate-100; }
+  .label { @apply mb-1.5 block text-sm font-medium text-navy-900; }
+  .card { @apply rounded-xl border border-slate-200 bg-white; }
+  .container-x { @apply mx-auto w-full max-w-6xl px-4 sm:px-6; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes pop { from { opacity: 0; transform: translateY(6px) scale(.98); } to { opacity: 1; transform: none; } }
+  .pop { animation: pop .18s ease-out; }
+}
